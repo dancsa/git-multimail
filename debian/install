@@ -1,0 +1,3 @@
+git-multimail/post-receive /usr/share/git-multimail/
+git-multimail/migrate-mailhook-config /usr/share/git-multimail/
+git-multimail/README* /usr/share/doc/git-multimail/
