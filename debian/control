@@ -8,6 +8,7 @@ Standards-Version: 3.9.1
 Package: git-multimail
 Architecture: all
 Depends: ${misc:Depends}, ${python:Depends}
+Recommends: mail-transport-agent
 Description: Send notification emails for Git pushes
  git-multimail
  .

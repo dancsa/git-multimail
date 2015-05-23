@@ -1,0 +1,13 @@
+This package provides easily usable post-receive script for both standalone
+ git repositories as well as gitolite repos.
+
+ For simple git repos, just symlink the /usr/share/git-multimail/post-receive script into the hooks directory
+ and use git config to set the configure options. (see /usr/share/doc/git-multimail/README.gz)
+
+ For gitolite/gitolite3 add the necessary git config options to the gitolite.rc 's GIT_CONFIG_KEYS parameters.
+  for example:     GIT_CONFIG_KEYS                 =>  'multimailhook\.environment multimailhook\.repoName multimailhook\.mailingList multimailhook\.refchangeList multimailhook\.announceList multimailhook\.commitList multimailhook\.announceShortlog multimailhook\.refchangeShowLog multimailhook\.mailer multimailhook\.envelopeSender multimailhook\.smtpServer multimailhook\.from multimailhook\.administrator multimailhook\.emailPrefix'
+  do not add multimailhook.logOpts multimailhook.sendmailCommand unless you understand the security implications of these options
+
+ Symlink the /usr/share/git-multimail/post-receive into the ./gitolite/hooks/common/ directory
+  run 'gitolite setup' as your gitolite user to apply the hook script to all already created repository. (the repos created after this will automatically get the script)
+  Add the config options to your repositories through gitolite-admin repository.
